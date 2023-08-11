@@ -25,7 +25,7 @@ public class Cubesort{
      public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int[] inputSizes = {10};
+        int[] inputSizes = {10, 100};
         
         for (int n : inputSizes) {
             System.out.println("Input Size: " + n);
@@ -57,35 +57,43 @@ public class Cubesort{
             }
 
             // Measure time for sorting in different scenarios
-            long startTime, endTime, elapsedTime;
+            long startTimeRandom, startTimeDecres, startTimeBest,
+            startTimeWorst,endTimeWorst, endTimeRandom, endTimeDecres, endTimeBest,
+            elapsedTimeDecres,elapsedTimeBest, elapsedTimeWorst,
+            elapsedTimeRandom;
 
             System.out.println("Random Input:");
-            startTime = System.nanoTime();
+            startTimeRandom = System.nanoTime();
             sortArray(randomArray, n);
-            endTime = System.nanoTime();
-            elapsedTime = endTime - startTime;
-            System.out.println("Time taken: " + elapsedTime + " nanoseconds");
+            endTimeRandom = System.nanoTime();
+            elapsedTimeRandom = endTimeRandom - startTimeRandom;
+           
 
             System.out.println("Decreasing Input:");
-            startTime = System.nanoTime();
+            startTimeDecres = System.nanoTime();
             sortArray(decreasingArray, n);
-            endTime = System.nanoTime();
-            elapsedTime = endTime - startTime;
-            System.out.println("Time taken: " + elapsedTime + " nanoseconds");
+            endTimeDecres = System.nanoTime();
+            elapsedTimeDecres = endTimeDecres - startTimeDecres;
+            
 
             System.out.println("Best Case Input:");
-            startTime = System.nanoTime();
+            startTimeBest = System.nanoTime();
             sortArray(bestCaseArray, n);
-            endTime = System.nanoTime();
-            elapsedTime = endTime - startTime;
-            System.out.println("Time taken: " + elapsedTime + " nanoseconds");
+            endTimeBest = System.nanoTime();
+            elapsedTimeBest = endTimeBest - startTimeBest;
+            
 
             System.out.println("Worst Case Input:");
-            startTime = System.nanoTime();
+            startTimeWorst = System.nanoTime();
             sortArray(worstCaseArray, n);
-            endTime = System.nanoTime();
-            elapsedTime = endTime - startTime;
-            System.out.println("Time taken: " + elapsedTime + " nanoseconds");
+            endTimeWorst = System.nanoTime();
+            elapsedTimeWorst = endTimeWorst - startTimeWorst;
+          
+            //tempos
+            System.out.println("Input aleatorio teve um tempo de " + elapsedTimeRandom + " nanoseconds");
+            System.out.println("Input decrescente teve um tempo de " + elapsedTimeDecres + " nanoseconds");
+            System.out.println("INput com melhor caso teve um tempo de " + elapsedTimeBest + " nanoseconds");
+            System.out.println("Pior caso teve um tempo de " + elapsedTimeWorst + " nanoseconds");
 
             System.out.println();
         }
