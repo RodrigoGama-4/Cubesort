@@ -25,7 +25,7 @@ public class Cubesort{
      public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int[] inputSizes = {10, 100};
+        int[] inputSizes = {1000000};
         
         for (int n : inputSizes) {
             System.out.println("Input Size: " + n);
@@ -88,12 +88,18 @@ public class Cubesort{
             sortArray(worstCaseArray, n);
             endTimeWorst = System.nanoTime();
             elapsedTimeWorst = endTimeWorst - startTimeWorst;
+
+            // Converter tempos para segundos
+            double elapsedTimeRandomSeconds = (double) elapsedTimeRandom / 1_000_000_000.0;
+            double elapsedTimeDecresSeconds = (double) elapsedTimeDecres / 1_000_000_000.0;
+            double elapsedTimeBestSeconds = (double) elapsedTimeBest / 1_000_000_000.0;
+            double elapsedTimeWorstSeconds = (double) elapsedTimeWorst / 1_000_000_000.0;
           
             //tempos
-            System.out.println("Input aleatorio teve um tempo de " + elapsedTimeRandom + " nanoseconds");
-            System.out.println("Input decrescente teve um tempo de " + elapsedTimeDecres + " nanoseconds");
-            System.out.println("INput com melhor caso teve um tempo de " + elapsedTimeBest + " nanoseconds");
-            System.out.println("Pior caso teve um tempo de " + elapsedTimeWorst + " nanoseconds");
+            System.out.println("Input aleatorio teve um tempo de " + elapsedTimeRandomSeconds + " s");
+            System.out.println("Input decrescente teve um tempo de " + elapsedTimeDecresSeconds + " s");
+            System.out.println("INput com melhor caso teve um tempo de " + elapsedTimeBestSeconds + " s");
+            System.out.println("Pior caso teve um tempo de " + elapsedTimeWorstSeconds + " s");
 
             System.out.println();
         }
