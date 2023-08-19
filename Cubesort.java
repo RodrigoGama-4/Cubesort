@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Random;
 
-public class CubesortRan {
+public class Cubesort {
     public static void cubesort(int[] A, int p) {
         
         int n = A.length;
@@ -100,9 +100,6 @@ public class CubesortRan {
         System.out.println("Tempo de execução do decrescente input: " + (endTimeDecres - startTimeDecres) / 1e9 + " segundos");
         System.out.println("Tempo de execução do melhor caso input: " + (endTimeBest - startTimeBest) / 1e9 + " segundos");
         System.out.println("Tempo de execução do pior caso input: " + (endTimeWorst - startTimeWorst) / 1e9 + " segundos");
-
-
-
 
     }
 }
